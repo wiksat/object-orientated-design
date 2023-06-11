@@ -1,0 +1,144 @@
+[
+  {
+    "name": "WorldMap",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Defining map size",
+      "Defining map fields",
+      "Defining info about fights anf history fights",
+      "Defining info about round"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "MapField",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keeping position of items there"
+    ],
+    "collaborators": [
+      "Object",
+      "WorldMap"
+    ]
+  },
+  {
+    "name": "Player",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keep information about heatlh, power, mana",
+      "Keep information about current weapon, armour, shield and available spells"
+    ],
+    "collaborators": [
+      "Items (weapons, armour, shield)",
+      "WorldMap"
+    ]
+  },
+  {
+    "name": "Weapon",
+    "superclasses": "AbstractWorldItem",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keep infor about weapon damages values"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Armour",
+    "superclasses": "AbstractWorldItem",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keeps info about armour values"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Shield",
+    "superclasses": "AbstractWorldItem",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keeps info about shield values",
+      "Keeps info about shield agility"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "AbstractWorldItem",
+    "superclasses": "",
+    "subclasses": "Weapon, Armour, Shield",
+    "type": 2,
+    "responsibilities": [
+      "Define item name"
+    ],
+    "collaborators": [
+      "MapField"
+    ]
+  },
+  {
+    "name": "Figth",
+    "superclasses": "",
+    "subclasses": "MeleeFight, MagicFight",
+    "type": 2,
+    "responsibilities": [
+      "Keep coordinates of players and amount of health before fight",
+      "Performs fight"
+    ],
+    "collaborators": [
+      "Players",
+      "WorldMap"
+    ]
+  },
+  {
+    "name": "MeleeFight",
+    "superclasses": "Fight",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keep info abour players weapon during this fight"
+    ],
+    "collaborators": [
+      "Weapons"
+    ]
+  },
+  {
+    "name": "MagicFight",
+    "superclasses": "Fight",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keeps info about spells used in this fight"
+    ],
+    "collaborators": [
+      "Spells"
+    ]
+  },
+  {
+    "name": "Spell",
+    "superclasses": "AbstractWorldItem",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Keep info about required mana",
+      "Keep info about spell strength"
+    ],
+    "collaborators": [
+      ""
+    ]
+  }
+]
